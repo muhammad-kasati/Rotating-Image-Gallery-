@@ -1,0 +1,146 @@
+body {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+  }
+
+  .sub-title {
+    font-size: 60px;
+    text-align: center;
+    padding-bottom: 90px;
+    color: #0ef;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.7s;
+    
+  }
+  
+  .image-container span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+  }
+
+  .row {
+    position: relative;
+    border-radius: 8px;
+    cursor: pointer;
+}
+  
+  .image-container span img {
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #0053b8f7;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+
+    display: block;
+    transition: transform 0.5s;
+  }
+
+  .layer {
+    height: 0;
+    background:linear-gradient(rgba(0,0,0,0.1),#0ef) ;
+    position: absolute;
+    border-radius: 8px;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    transition: height 0.5s;
+}
+
+.layer h5 {
+    color: #000;
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.layer p {
+    color: #000;
+    font-size: .5rem;
+    line-height: 1.4;
+}
+
+.layer i {
+    color: #ff004f;
+    font-size: 10px;
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.row:hover img {
+    transform: scale(1.1);
+}
+
+.row:hover .layer {
+    height: 100%;
+    transform: scale(1.1);
+}
+
+  .image-container span img:hover{
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan ;
+    transform: translateY(-10px);
+  }
+  
+  .btn-container {
+    position: relative;
+    width: 80%;
+  }
+  
+  .btn {
+    position: absolute;
+    bottom: -80px;
+    border: none;
+    cursor: pointer;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+    z-index: 10;
+  }
+  
+  .btn:hover {
+    filter: brightness(1.5);
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan,
+    0 0 200px cyan;
+  }
+  
+  #prev {
+    left: 20%;
+  }
+  
+  #next {
+    right: 20%;
+  }
